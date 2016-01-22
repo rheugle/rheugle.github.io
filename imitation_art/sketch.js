@@ -11,7 +11,8 @@ var N = 400;
 
 function setup() {
 
-  createCanvas(windowWidth, windowHeight);
+  //createCanvas(windowWidth, windowHeight);
+  createCanvas(800,400);
   noStroke(); 
   background(255);
 

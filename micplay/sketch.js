@@ -51,7 +51,8 @@ var mic;
 
 function setup() {
   
-  createCanvas(windowWidth,windowHeight);
+  //createCanvas(windowWidth,windowHeight);
+  createCanvas(800,400);
   noStroke();
   colorMode(HSB);
 

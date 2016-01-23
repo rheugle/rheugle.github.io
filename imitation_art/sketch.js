@@ -4,20 +4,23 @@
 // // Example 1-1: stroke and fill
 
 //Sound Components
+var sketch_imitationArt = function(p) {
+
 var osc;
 
 var particles = [];
-var N = 400;
+var N = 200;
 
-function setup() {
+p.setup = function(){
+//function setup() {
 
   //createCanvas(windowWidth, windowHeight);
-  createCanvas(800,400);
-  noStroke(); 
-  background(255);
+  p.createCanvas(p.windowWidth, p.windowHeight);
+  p.noStroke(); 
+  p.background(255);
 
   for (var i=0;i<N;i++){
-    particles.push(new particle());
+    particles.push(new p.particle());
   }
 
   for (var i=0;i<N;i++){
@@ -26,40 +29,41 @@ function setup() {
 
 }
 
-function draw(){
+p.draw = function(){
+//function draw(){
   for (var i=0;i<N;i++){
     particles[i].move();
     particles[i].display(); 
   }
-  background(255,255,255,20);
+  p.background(255,255,255,20);
 }
 
-function particle(){
+p.particle=function(){
   
   //console.log(this);
-  this.distance = random(20,320);
-  this.radius = random(2,30);
+  this.distance = p.random(20,320);
+  this.radius = p.random(2,30);
   this.theta = 0;
   this.x = 0;
   this.y = 0;
-  this.inc = random(-0.02,0.02);
+  this.inc = p.random(-0.02,0.02);
   this.frequency = this.distance/(320)*1000;
 
-  this.r = random(50,200);
-  this.g = random(200,220);
-  this.b = random(0);
-  this.alph = random(0,255);
+  this.r = p.random(50,200);
+  this.g = p.random(200,220);
+  this.b = p.random(0);
+  this.alph = p.random(0,255);
 
   this.move = function(){
      this.theta += this.inc;
-     this.x = windowWidth/2+this.distance*cos(this.theta);
-     this.y = windowHeight/2+this.distance*sin(this.theta);
+     this.x = p.windowWidth/2+this.distance*p.cos(this.theta);
+     this.y = p.windowHeight/2+this.distance*p.sin(this.theta);
      console.log()
   }
 
   this.display = function(){
-    fill(this.r,this.g,this.b,this.alph);
-    ellipse(this.x,this.y,this.radius,this.radius);
+    p.fill(this.r,this.g,this.b,this.alph);
+    p.ellipse(this.x,this.y,this.radius,this.radius);
   }
 
   this.oscillate = function(){
@@ -69,5 +73,7 @@ function particle(){
     this.osc.amp(2.0);
     this.osc.start();
   }
-  
+
+}
+
 }

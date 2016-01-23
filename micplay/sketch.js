@@ -47,50 +47,54 @@
 // };
 
 
+
+var sketch_micPlay = function(p) {
+
 var mic;
 
-function setup() {
+p.setup = function(){
+//function setup() {
   
-  //createCanvas(windowWidth,windowHeight);
-  createCanvas(800,400);
-  noStroke();
-  colorMode(HSB);
+  p.createCanvas(p.windowWidth,p.windowHeight);
+  //p.createCanvas(800,400);
+  p.noStroke();
+  p.colorMode(p.HSB);
 
   mic = new p5.AudioIn();
   mic.start();
-
-  background(255);
+  p.background(255);
 
 }
 
-function draw() {
+p.draw = function() {
 
-  background(255);
 
-  var d1 = map(mic.getLevel(), 0, 0.02, 0, 10);
-  var d2 = map(mic.getLevel(), 0, 0.02, 0, 10);
-  var d3 = map(mic.getLevel(), 0, 0.02, 0, d2);
+
+  p.background(255);
+
+  var d1 = p.map(mic.getLevel(), 0, 0.02, 0, 10);
+  var d2 = p.map(mic.getLevel(), 0, 0.02, 0, 10);
+  var d3 = p.map(mic.getLevel(), 0, 0.02, 0, d2);
   //console.log(d1,d2,d3)
 
-  var v1 = createVector(d1,d2);
-  var y = map(mic.getLevel(), 0, 0.2, height, 0);
+  var v1 = p.createVector(d1,d2);
+  var y = p.map(mic.getLevel(), 0, 0.2, p.height, 0);
 
-  fill(random(255),random(255),random(255));
+  p.fill(p.random(255),p.random(255),p.random(255));
 
   for (var i=0;i<314;i++){
-    ellipse(width/2+v1.x, height/2+v1.y, 10,10);
+    p.ellipse(p.width/2+v1.x, p.height/2+v1.y, 10,10);
     v1.rotate(0.1); 
   }
 
-  for (var i=0; i<width; i++){
-    a = d2*sin(2*PI*i/d3);
-    ellipse(i,height/2+a,3,3);
-    ellipse(width/2+a,i,3,3);
+  for (var i=0; i<p.width; i++){
+    a = d2*p.sin(2*p.PI*i/d3);
+    p.ellipse(i,p.height/2+a,3,3);
+    p.ellipse(p.width/2+a,i,3,3);
   }
-
 
 }
 
-
+}
 
 

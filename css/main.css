@@ -3,6 +3,33 @@ body {
     margin: 60px auto;
     width: 70%;
 }
+
+body{
+    margin:0px;
+    background:rgb(230,150,50);
+}
+.header-cont {
+    width:100%;
+    position:fixed;
+    top:0px;
+}
+.header {
+    height:50px;
+    background:#F0F0F0;
+    border:0px solid #CCC;
+    width:960px;
+    margin:0px auto;
+}
+.content {
+    width:960px;
+    background: #F0F0F0;
+    border: 1px solid #CCC;
+    height: 2000px;
+    margin: 70px auto;
+}
+
+
+
 nav ul, footer ul {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
     padding: 0px;
@@ -11,17 +38,12 @@ nav ul, footer ul {
 }
 nav ul li, footer ul li {
     display: inline;
-    margin-right: 20px;
+    margin-right: 5px;
+    margin-left:20px;
 }
-a {
-    text-decoration: none;
-    color: #999;
-}
-a:hover {
-    text-decoration: underline;
-}
+
 h1 {
-    font-size: 3em;
+    font-size: 4em;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
 }
 p {
@@ -84,9 +106,10 @@ body {
   We'll set the width dynamically in the JavaScript as the images load
 */
  
-#gallery {
+ 
+ #gallery {
   width: 100px;
-  height: 700px;        /* Image height + 100px */
+  height: 700px;         /*Image height + 100px */
   padding: 50px 0 50px 0;
   position: absolute;
   z-index: 1;
@@ -139,7 +162,7 @@ body {
   border: none;
   outline: none;
   color: #fff;
-  background: transparent url(images/blank.gif);
+  /*background: transparent url(images/blank.gif);*/
   font-size: 100px;
   font-family: "Courier New", courier, fixed;
   opacity: 0;

@@ -49,9 +49,9 @@ p.particle=function(){
   this.inc = p.random(-0.02,0.02);
   this.frequency = this.distance/(320)*1000;
 
-  this.r = p.random(50,200);
-  this.g = p.random(200,220);
-  this.b = p.random(0);
+  this.r = p.random(200,250);
+  this.g = p.random(100,150);
+  this.b = p.random(100);
   this.alph = p.random(0,255);
 
   this.move = function(){

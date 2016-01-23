@@ -46,8 +46,6 @@
 //   };
 // };
 
-
-
 var sketch_micPlay = function(p) {
 
 var mic;
@@ -68,29 +66,32 @@ p.setup = function(){
 
 p.draw = function() {
 
-
-
   p.background(255);
 
-  var d1 = p.map(mic.getLevel(), 0, 0.02, 0, 10);
-  var d2 = p.map(mic.getLevel(), 0, 0.02, 0, 10);
-  var d3 = p.map(mic.getLevel(), 0, 0.02, 0, d2);
+  //var d1 = p.map(mic.getLevel(), 0, 0.02, 0, 10);
+  //var d2 = p.map(mic.getLevel(), 0, 0.02, 0, 10);
+  //var d3 = p.map(mic.getLevel(), 0, 0.02, 0, d2);
   //console.log(d1,d2,d3)
 
-  var v1 = p.createVector(d1,d2);
-  var y = p.map(mic.getLevel(), 0, 0.2, p.height, 0);
+var d1 = p.map(p.mouseX,0,p.width,0,100);
+var d2 = p.map(p.mouseX,0,p.windowWidth,0,100);
+var d3 = p.map(p.mouseX,0,p.windowWidth,0,d2);
 
-  p.fill(p.random(255),p.random(255),p.random(255));
+  var v1 = p.createVector(d1,d2);
+  var y = p.map(p.mouseX,0,p.windowWidth*0.2,p.height,0);
+  // var y = p.map(mic.getLevel(), 0, 0.2, p.height, 0);
+
+  p.fill(120,130,130+p.frameCount);
 
   for (var i=0;i<314;i++){
-    p.ellipse(p.width/2+v1.x, p.height/2+v1.y, 10,10);
+    //p.ellipse(p.width/2+v1.x, p.height/2+v1.y, 10,10);
     v1.rotate(0.1); 
   }
 
   for (var i=0; i<p.width; i++){
     a = d2*p.sin(2*p.PI*i/d3);
-    p.ellipse(i,p.height/2+a,3,3);
-    p.ellipse(p.width/2+a,i,3,3);
+    p.ellipse(i,p.height/2+a,4,4);
+    p.ellipse(p.width/2+a,i,4,4);
   }
 
 }

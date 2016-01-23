@@ -7,7 +7,6 @@
 		<meta charset="UTF-8">
 	  <script language="javascript" type="text/javascript" src="imitation_art/libraries/p5.js"></script>
 
-
 	  <!-- uncomment lines below to include extra p5 libraries -->
 
 	  <script language="javascript" src="imitation_art/libraries/p5.dom.js"></script>
@@ -23,29 +22,23 @@
     		</div><!-- /.blurb -->
 		</div><!-- /.container -->
 
-		
-
 	</head>
 	<body>
 
-
 	 <button id="leftButton" onclick='moveLeft()'>&lt;</button>
 	 <button id="rightButton" onclick='moveRight()'>&gt;</button>
-	
-		<div id="galleryContainer">
-			<div id="gallery">
-					<script language="javascript" type="text/javascript" src="imitation_art/sketch.js"> </script>
-					<script> var myp5 = new p5(sketch_imitationArt, "myGallery"); </script>
-					 <!--<script language="javascript" type="text/javascript" src="micplay/sketch.js"></script>-->
-			 </div>
-			 <div id="gallery2">
-					<script language="javascript" type="text/javascript" src="micplay/sketch.js"> </script>
-					<script>var myp5 = new p5(sketch_micPlay, "myGallery")</script>
-			 </div>
 
-		 </div>
-
-
+	<div id="galleryContainer">
+		<div id="gallery">
+				<script language="javascript" type="text/javascript" src="imitation_art/sketch.js"> </script>
+				<script> var myp5 = new p5(sketch_imitationArt, "myGallery"); </script>
+				<script language="javascript" type="text/javascript" src="micplay/sketch.js"> </script>
+				<script>var myp5 = new p5(sketch_micPlay, "myGallery")</script>
+				<script type="text/javascript"></script>
+		</div>
+	    <div id="caption">Photo Caption</div>
+	    <div id="loading">Please wait...</div>
+	</div>
 
 		<footer>
     		<ul>
